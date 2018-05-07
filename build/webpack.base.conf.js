@@ -35,6 +35,7 @@ module.exports = {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       '@': resolve('src'),
+      'pages': resolve('src/pages'),
     }
   },
   module: {
@@ -65,6 +66,10 @@ module.exports = {
           limit: 10000,
           name: utils.assetsPath('media/[name].[hash:7].[ext]')
         }
+      },
+      {
+        test: /\.scss$/,
+        loaders: ['style','css','sass']
       },
       {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,

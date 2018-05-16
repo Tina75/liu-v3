@@ -1,8 +1,9 @@
 import Mock from 'mockjs'
 
 Mock.mock('/login', (request, response) => {
-  let req = JSON.parse(request)
-  if (req.userName === 'Tina' && req.password === '123456') {
+  // console.log(request)
+  let req = request.body
+  if (req.userName && req.password) {
     return {
       data: {
         resultCode: 0,

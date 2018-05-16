@@ -9,6 +9,9 @@ const myRule = r => require.ensure([], () => r(require('pages/myRule')), 'myRule
 export default new Router({
   routes: [
     {
+      path: '*', redirect: '/'
+    },
+    {
       path: '/',
       name: 'login',
       component: login

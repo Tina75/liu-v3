@@ -12,4 +12,6 @@ export default {
 
 <style lang="scss">
 @import "style/common";
+@import "style/font.css";
+@import "style/mixin";
 </style>

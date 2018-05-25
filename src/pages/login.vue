@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import * as request from '../utils/request'
+import {login} from '../api/login'
 export default {
   name: 'login',
   mounted () {
@@ -64,9 +64,10 @@ export default {
     login (formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          // console.log(this.loginForm)
-          request.login(this.loginForm).then(response => {
-            console.log(response)
+          login(this.loginForm).then(response => {
+            this.$store.commit('SET_USERNAME', response.data.name)
+            this.$store.commit('SET_USERID', response.data.userId)
+            this.$router.push({ path: 'index' })
           })
         }
       })

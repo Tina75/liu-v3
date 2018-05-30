@@ -6,5 +6,10 @@ const user = {
 }
 
 export default {
-  login: config => user
+  login: config => {
+    let uname = JSON.parse(config.body).uname.userName
+    user.name = uname
+    console.log(user)
+    return user
+  }
 }

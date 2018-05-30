@@ -1,7 +1,7 @@
 <template>
     <div class="fillContain">
       <el-container class="fillContain">
-        <el-aside width="240px">
+        <el-aside width="240px"  style="height:100%">
           <navMenu></navMenu>
         </el-aside>
         <el-container style="min-width: 1100px">

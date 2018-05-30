@@ -6,13 +6,13 @@
           系统状态：<span>在线</span>
         </el-col>
         <el-col :span="3" class="item">
-          <span>2018-05-25 14:38:00</span>
+          <span>{{time}}</span>
         </el-col>
         <el-col :span="2" class="item">
           <el-dropdown>
             <span class="el-dropdown-link">
               <i class="icon-icon-sy9"></i>
-              <span>用户名</span>
+              <span>{{username}}</span>
               <i class="el-icon-arrow-down el-icon--right"></i>
             </span>
             <el-dropdown-menu slot="dropdown">
@@ -26,8 +26,43 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
-  name: 'navHeader'
+  name: 'navHeader',
+  data () {
+    return {
+      time: ''
+    }
+  },
+  mounted () {
+    var _this = this
+    this.time = this.timeNow()
+    setTimeout(function () {
+      _this.time = _this.timeNow()
+    }, 1000)
+  },
+  computed: {
+    ...mapGetters([
+      'username'
+    ])
+  },
+  methods: {
+    timeNow () {
+      let date = new Date()
+      let y = date.getFullYear()
+      let m = date.getMonth() + 1
+      m = m < 10 ? ('0'+ m ): ( m )
+      let d = date.getDate()
+      d = d < 10 ? ('0'+d ) :d
+      let h = date.getHours() // 0-23
+      h = h < 10 ? ('0'+ h ) :h
+      let minute = date.getMinutes()
+      minute = minute < 10 ? ('0'+ minute ) : minute
+      let second = date.getSeconds()
+      second = second < 10 ? ('0'+ second ) : second
+      return y + '-' + m + '-' + d + ' ' +h + ':' + minute + ':' + second
+    }
+  }
 }
 </script>
 

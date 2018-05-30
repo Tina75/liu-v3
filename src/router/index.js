@@ -10,7 +10,8 @@ const allRule = r => require.ensure([], () => r(require('pages/allRule')), 'allR
 export default new Router({
   routes: [
     {
-      path: '*', redirect: '/'
+      path: '*', redirect: '/',
+      path: '/index', redirect: '/index/myRule'
     },
     {
       path: '/',
@@ -23,13 +24,13 @@ export default new Router({
       component: index,
       children: [
         {
-          path: '/',
-          name: 'myRule',
+          path: '/index/myRule',
+          name: '我的规则',
           component: myRule
         },
         {
-          path: '/allRule',
-          name: 'allRule',
+          path: '/index/allRule',
+          name: '全部规则',
           component: allRule
         }
       ]

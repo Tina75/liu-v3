@@ -51,16 +51,16 @@ export default {
       let date = new Date()
       let y = date.getFullYear()
       let m = date.getMonth() + 1
-      m = m < 10 ? ('0'+ m ): ( m )
+      m = m < 10 ? ('0' + m) : m
       let d = date.getDate()
-      d = d < 10 ? ('0'+d ) :d
+      d = d < 10 ? ('0' + d) : d
       let h = date.getHours() // 0-23
-      h = h < 10 ? ('0'+ h ) :h
+      h = h < 10 ? ('0' + h) : h
       let minute = date.getMinutes()
-      minute = minute < 10 ? ('0'+ minute ) : minute
+      minute = minute < 10 ? ('0' + minute) : minute
       let second = date.getSeconds()
-      second = second < 10 ? ('0'+ second ) : second
-      return y + '-' + m + '-' + d + ' ' +h + ':' + minute + ':' + second
+      second = second < 10 ? ('0' + second) : second
+      return y + '-' + m + '-' + d + ' ' + h + ':' + minute + ':' + second
     }
   }
 }

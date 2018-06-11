@@ -67,7 +67,7 @@ export default {
           login(this.loginForm).then(response => {
             this.$store.commit('SET_USERNAME', response.data.name)
             this.$store.commit('SET_USERID', response.data.userId)
-            this.$router.push({ path: '/index' })
+            this.$router.push({ path: '/myRule' })
           })
         }
       })

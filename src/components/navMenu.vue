@@ -4,22 +4,22 @@
       <i class="icon-icon-sy11 icon"></i>
       <span>报文实时过滤分析系统</span>
     </h4>
-    <el-menu :router="true" class="menuList" default-active="/index/myRule">
+    <el-menu :router="true" class="menuList" default-active="/myRule">
       <el-submenu index="1" >
         <template slot="title">
             <i class="icon-icon-sy1"></i>
             <span>规则管理</span>
         </template>
-        <el-menu-item index="/index/myRule">我的规则</el-menu-item>
-        <el-menu-item index="/index/allRule">全部规则</el-menu-item>
+        <el-menu-item index="/myRule">我的规则</el-menu-item>
+        <el-menu-item index="/allRule">全部规则</el-menu-item>
       </el-submenu>
       <el-submenu index="2">
         <template slot="title" style="color: red" class="item">
           <i class="icon-icon-sy1"></i>
           <span>规则管理</span>
         </template>
-        <el-menu-item index="2-1" >我的规则</el-menu-item>
-        <el-menu-item index="2-2">全部规则</el-menu-item>
+        <el-menu-item index="2-1" >我的任务</el-menu-item>
+        <el-menu-item index="2-2">全部任务</el-menu-item>
       </el-submenu>
     </el-menu>
   </div>

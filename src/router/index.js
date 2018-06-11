@@ -5,7 +5,7 @@ Vue.use(Router)
 const login = r => require.ensure([], () => r(require('pages/login')), 'login')
 const index = r => require.ensure([], () => r(require('pages/index')), 'index')
 const myRule = r => require.ensure([], () => r(require('pages/myRule')), 'myRule')
-const allRule = r => require.ensure([], () => r(require('pages/allRule')), 'allRule')
+const allRule = r => require.ensure([], () => r(require('pages/allRule/allRule')), 'allRule')
 
 export default new Router({
   routes: [

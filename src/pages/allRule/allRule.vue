@@ -16,7 +16,6 @@
      </el-tabs>
    </div>
 </template>
-
 <script>
 export default {
   name: 'allRule',
@@ -45,28 +44,30 @@ export default {
         })
         this.editableTabsValue = newTabName
       }
-      // if (action === 'remove') {
-      //   let tabs = this.editableTabs
-      //   let activeName = this.editableTabsValue
-      //   if (activeName === targetName) {
-      //     tabs.forEach((tab, index) => {
-      //       if (tab.name === targetName) {
-      //         let nextTab = tabs[index + 1] || tabs[index - 1]
-      //         if (nextTab) {
-      //           activeName = nextTab.name
-      //         }
-      //       }
-      //     })
-      //   }
-
-      //   this.editableTabsValue = activeName
-      //   this.editableTabs = tabs.filter(tab => tab.name !== targetName)
-      // }
+      if (action === 'remove') {
+        let tabs = this.editableTabs
+        let activeName = this.editableTabsValue
+        if (activeName === targetName) {
+          tabs.forEach((tab, index) => {
+            if (tab.name === targetName) {
+              let nextTab = tabs[index + 1] || tabs[index - 1]
+              if (nextTab) {
+                activeName = nextTab.name
+              }
+            }
+          })
+        }
+        this.editableTabsValue = activeName
+        this.editableTabs = tabs.filter(tab => tab.name !== targetName)
+      }
     }
   }
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+  .el-tabs /deep/ .el-tabs__item:nth-child(1) .el-icon-close{
+    display: none;
+  }
 
 </style>

@@ -12,7 +12,7 @@
           <el-dropdown>
             <span class="el-dropdown-link">
               <i class="icon-icon-sy9"></i>
-              <span>{{username}}</span>
+              <span>{{uName}}</span>
               <i class="el-icon-arrow-down el-icon--right"></i>
             </span>
             <el-dropdown-menu slot="dropdown">
@@ -31,7 +31,8 @@ export default {
   name: 'navHeader',
   data () {
     return {
-      time: ''
+      time: '',
+      uName: this.userName || localStorage.getItem('userName')
     }
   },
   mounted () {

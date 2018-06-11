@@ -65,6 +65,7 @@ export default {
       this.$refs[formName].validate((valid) => {
         if (valid) {
           login(this.loginForm).then(response => {
+            localStorage.setItem('userName', response.data.name)
             this.$store.commit('SET_USERNAME', response.data.name)
             this.$store.commit('SET_USERID', response.data.userId)
             this.$router.push({ path: '/myRule' })
